@@ -1,0 +1,111 @@
+.summaryContainer {
+  display: grid;
+  gap: 0.9rem;
+}
+
+.totalCard,
+.budgetCard {
+  border-radius: 20px;
+  border: 1px solid var(--line-soft);
+  background: var(--surface);
+  box-shadow: var(--shadow-soft);
+  padding: 1.15rem;
+}
+
+.totalCard h3,
+.budgetCard h3 {
+  margin: 0;
+  font-size: 1.15rem;
+}
+
+.totalAmount {
+  margin-top: 0.7rem;
+  font-size: clamp(1.85rem, 4.2vw, 2.55rem);
+  line-height: 1;
+  color: #0e7366;
+  font-weight: 800;
+}
+
+.count {
+  margin-top: 0.5rem;
+  color: var(--ink-muted);
+  font-size: 0.86rem;
+}
+
+.budgetInfo {
+  margin-top: 0.8rem;
+  display: grid;
+  gap: 0.8rem;
+}
+
+.budgetBar {
+  height: 12px;
+  border-radius: 999px;
+  overflow: hidden;
+  background: rgba(34, 55, 74, 0.16);
+}
+
+.budgetFill {
+  height: 100%;
+  border-radius: 999px;
+  transition: width 240ms ease;
+}
+
+.budgetFill.normal {
+  background: linear-gradient(90deg, #1c9f8a, #5ab2a4);
+}
+
+.budgetFill.warning {
+  background: linear-gradient(90deg, #e25934, #f08b4f);
+  animation: pulse 1.8s infinite;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    filter: saturate(1);
+  }
+  50% {
+    filter: saturate(1.3);
+  }
+}
+
+.budgetStatus {
+  margin: 0;
+  font-size: 0.92rem;
+  font-weight: 700;
+}
+
+.budgetStatus.warning {
+  color: #aa3b2d;
+}
+
+.budgetDetails {
+  border-radius: 12px;
+  border: 1px solid rgba(34, 55, 74, 0.08);
+  background: rgba(255, 255, 255, 0.72);
+  padding: 0.75rem;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.65rem;
+}
+
+.budgetDetails span {
+  font-size: 0.87rem;
+  color: #204258;
+  display: grid;
+  gap: 0.2rem;
+}
+
+.budgetDetails strong {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--ink-muted);
+}
+
+@media (max-width: 780px) {
+  .budgetDetails {
+    grid-template-columns: 1fr;
+  }
+}

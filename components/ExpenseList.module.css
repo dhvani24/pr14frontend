@@ -1,0 +1,140 @@
+.listContainer {
+  border: 1px solid var(--line-soft);
+  border-radius: 20px;
+  background: var(--surface);
+  backdrop-filter: blur(8px);
+  box-shadow: var(--shadow-soft);
+  padding: 1.2rem;
+}
+
+.listContainer h2 {
+  margin: 0 0 1rem;
+  font-size: clamp(1.18rem, 1.8vw, 1.45rem);
+}
+
+.expenseList {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.expenseCard {
+  border: 1px solid rgba(34, 55, 74, 0.12);
+  border-radius: 14px;
+  padding: 0.86rem;
+  background: rgba(255, 255, 255, 0.75);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: transform 160ms ease, box-shadow 160ms ease, border-color 160ms ease;
+}
+
+.expenseCard:hover {
+  transform: translateY(-2px);
+  border-color: rgba(28, 159, 138, 0.32);
+  box-shadow: 0 10px 16px rgba(25, 52, 73, 0.12);
+}
+
+.expenseContent {
+  flex: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.9rem;
+}
+
+.expenseHeader {
+  display: flex;
+  align-items: center;
+  gap: 0.72rem;
+}
+
+.categoryEmoji {
+  min-width: 2.25rem;
+  padding: 0.4rem 0.3rem;
+  border-radius: 9px;
+  text-align: center;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  color: #0f4d43;
+  background: rgba(28, 159, 138, 0.16);
+}
+
+.expenseInfo h3 {
+  margin: 0;
+  font-size: 0.98rem;
+}
+
+.category {
+  margin: 0.15rem 0 0;
+  color: var(--ink-muted);
+  font-size: 0.76rem;
+}
+
+.expenseAmount {
+  text-align: right;
+}
+
+.amount {
+  display: block;
+  font-weight: 800;
+  color: #0d7f71;
+}
+
+.date {
+  color: var(--ink-muted);
+  font-size: 0.72rem;
+}
+
+.deleteBtn {
+  margin-left: 0.8rem;
+  border: none;
+  border-radius: 10px;
+  padding: 0.5rem 0.62rem;
+  font-size: 0.7rem;
+  letter-spacing: 0.04em;
+  font-weight: 700;
+  background: rgba(212, 76, 62, 0.14);
+  color: #922f24;
+  cursor: pointer;
+  transition: transform 150ms ease, background-color 150ms ease;
+}
+
+.deleteBtn:hover:not(:disabled) {
+  transform: translateY(-1px);
+  background: rgba(212, 76, 62, 0.25);
+}
+
+.deleteBtn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.emptyState {
+  border-radius: 20px;
+  border: 1px dashed rgba(34, 55, 74, 0.24);
+  padding: 2.2rem 1.2rem;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.55);
+}
+
+.emptyState h3 {
+  margin: 0;
+  font-size: 1.28rem;
+}
+
+.emptyState p {
+  margin: 0.58rem 0 0;
+  color: var(--ink-muted);
+}
+
+@media (max-width: 780px) {
+  .expenseContent {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .expenseAmount {
+    text-align: left;
+  }
+}

@@ -1,0 +1,102 @@
+.formContainer {
+  border-radius: 20px;
+  border: 1px solid var(--line-soft);
+  background: linear-gradient(170deg, rgba(28, 159, 138, 0.12), rgba(255, 255, 255, 0.72));
+  backdrop-filter: blur(8px);
+  box-shadow: var(--shadow-soft);
+  padding: 1.25rem;
+}
+
+.formTitleRow h2 {
+  font-size: clamp(1.25rem, 2vw, 1.55rem);
+  margin: 0;
+}
+
+.formTitleRow p {
+  margin: 0.4rem 0 0.9rem;
+  color: var(--ink-muted);
+  font-size: 0.92rem;
+}
+
+.form {
+  display: grid;
+  gap: 0.9rem;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.formGroup {
+  display: grid;
+  gap: 0.42rem;
+}
+
+.formGroup label {
+  font-size: 0.76rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--ink-muted);
+}
+
+.formGroup input,
+.formGroup select {
+  width: 100%;
+  border: 1px solid rgba(34, 55, 74, 0.18);
+  border-radius: 12px;
+  padding: 0.74rem 0.86rem;
+  background: rgba(255, 255, 255, 0.82);
+  color: var(--ink-strong);
+  transition: border-color 180ms ease, box-shadow 180ms ease, transform 180ms ease;
+}
+
+.formGroup input:focus,
+.formGroup select:focus {
+  outline: none;
+  border-color: rgba(28, 159, 138, 0.72);
+  box-shadow: 0 0 0 3px rgba(28, 159, 138, 0.18);
+  transform: translateY(-1px);
+}
+
+.formGroup input:disabled,
+.formGroup select:disabled {
+  background-color: rgba(220, 226, 230, 0.58);
+  cursor: not-allowed;
+}
+
+.submitWrap {
+  grid-column: 1 / -1;
+}
+
+.submitBtn {
+  border: none;
+  border-radius: 14px;
+  padding: 0.82rem 1.2rem;
+  min-width: 180px;
+  background: linear-gradient(120deg, var(--accent), #157f70);
+  color: #f3fffc;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+  transition: transform 180ms ease, box-shadow 180ms ease, filter 180ms ease;
+}
+
+.submitBtn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 22px rgba(20, 114, 100, 0.28);
+  filter: saturate(1.08);
+}
+
+.submitBtn:disabled {
+  cursor: not-allowed;
+  background: #9ab8b2;
+  box-shadow: none;
+}
+
+@media (max-width: 900px) {
+  .form {
+    grid-template-columns: 1fr;
+  }
+
+  .submitBtn {
+    width: 100%;
+  }
+}
